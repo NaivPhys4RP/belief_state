@@ -3,5 +3,5 @@ This module of [NaivPhys4RP](https://github.com/NaivPhys4RP/naivphys4rp/) is mai
 
 
 <p align=center>
-<img src="resources/Belief.png"></img>
+<img src="resources/Belief1.png"></img>
 </p>
