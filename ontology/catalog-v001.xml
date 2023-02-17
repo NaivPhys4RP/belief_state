@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1673871948108" name="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp" uri="test.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1673871948108" name="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl" uri="naivphys4rp.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1673871948108" name="http://www.semanticweb.org/smile/ontologies/2022/2/TraceBot" uri="TraceBotOntology.owl"/>
+    </group>
+</catalog>
