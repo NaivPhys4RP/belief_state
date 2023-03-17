@@ -23,9 +23,35 @@ class NaivPhys4RPKnowrobServer:
          self.currentBeliefState=None
          self.namespace="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#" #default ontology's namespace
          
+         #KBListParticipant.action KBFromRoleToObject.action KBDomainRelation.action KBPotentialActionObject.action
+         
+         self.list_participant_server = actionlib.SimpleActionServer('naivphys4rp_list_participant', KBListParticipantAction, self.executeListParticipant, False)
+         self.list_participant_server.start()
+         print("Server list participant is started !")
+         
+         """
+         self.object_relation_server = actionlib.SimpleActionServer('naivphys4rp_object_relation', KBObjectRelationAction, self.executeObjectRelation, False)
+         self.object_relation_server.start()
+         print("Server object relation is started !")
+         """
+         
+         self.role_to_object_server = actionlib.SimpleActionServer('naivphys4rp_role_to_object', KBFromRoleToObjectAction, self.executeFromRoleToObject, False)
+         self.role_to_object_server.start()
+         print("Server role to object is started !")
+         
+         self.domain_relation_server = actionlib.SimpleActionServer('naivphys4rp_domain_relation', KBDomainRelationAction, self.executeDomainRelation, False)
+         self.domain_relation_server.start()
+         print("Server domain relation is started !")
+         
+         self.potential_action_object_server = actionlib.SimpleActionServer('naivphys4rp_potential_action_object', KBPotentialActionObjectAction, self.executePotentialActionObject, False)
+         self.potential_action_object_server.start()
+         print("Server potential action object is started !")
+         
          self.onto_load_server = actionlib.SimpleActionServer('naivphys4rp_knowrob_load', KBLoadOntologyAction, self.executeLoadOntology, False)
          self.onto_load_server.start()
          print("Server ontology loader is started !")
+         
+         
          
          self.subclass_server = actionlib.SimpleActionServer('naivphys4rp_knowrob_subclass', KBSubClassAction, self.executeSubClass, False)
          self.subclass_server.start()
@@ -79,7 +105,10 @@ class NaivPhys4RPKnowrobServer:
          print("Processing goal ...")
          packageName = goal.package
          relativePath= goal.relative_path
-         self.namespace=goal.namespace
+         if len(goal.namespace)<1:
+              goal.namespace=self.namespace
+         else:	
+              self.namespace=goal.namespace
          result=KBLoadOntologyResult()
          feedback=KBLoadOntologyFeedback()
          result.status=True
@@ -99,6 +128,524 @@ class NaivPhys4RPKnowrobServer:
          self.onto_load_server.set_succeeded(result)
 
 
+##########################################################################################################################################################################
+
+
+	"""
+	def executeObjectRelation(self, goal):
+		print("Processing goal ...")
+
+		result=KBObjectRelationResult()
+		feedback=KBObjectRelationFeedback()
+		result.relations=[]
+		feedback.feedback=True
+		if len(goal.namespace)<1:
+			goal.namespace=self.namespace
+		############################################################################### Such for all related classes ##############################################
+		listclasses=[goal.class_name]
+		i=0
+		while(i<len(listclasses)):
+			class_name=listclasses[i]
+			
+			#superclasses
+			try:
+				q = self.prolog.query("kb_call([subclass_of('"+goal.namespace+class_name+"',A)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							print(solution['A'])
+				q.finish() 
+			
+			except Exception as e:
+				print("*********", str(e))
+			
+			#equivalentclasses
+			try:
+				q = self.prolog.query("kb_call([has_equivalent_class('"+goal.namespace+class_name+"',A)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							print(solution['A'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+			
+			#intersection of classes
+			try:
+				q = self.prolog.query("kb_call([has_description('"+goal.namespace+class_name+"',intersection_of(B)), member(A,B)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							print(solution['A'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+			
+			if len(result.classes)>0:
+				feedback.feedback=True
+			else:
+				feedback.feedback=False
+		self.role_to_object_server.publish_feedback(feedback)
+		self.role_to_object_server.set_succeeded(result)  
+		""" 
+
+##########################################################################################################################################################################
+
+
+
+	def executeFromRoleToObject(self, goal):
+		print("Processing goal ...")
+
+		result=KBFromRoleToObjectResult()
+		feedback=KBFromRoleToObjectFeedback()
+		result.classes=[]
+		feedback.feedback=True
+		if len(goal.namespace)<1:
+			goal.namespace=self.namespace
+		############################################################################### Such for all related classes ##############################################
+		listclasses=[goal.class_name]
+		i=0
+		while(i<len(listclasses)):
+			class_name=listclasses[i]
+			
+			#superclasses
+			try:
+				q = self.prolog.query("kb_call([subclass_of('"+goal.namespace+class_name+"',A)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							print(solution['A'])
+				q.finish() 
+			
+			except Exception as e:
+				print("*********", str(e))
+			
+			#equivalentclasses
+			try:
+				q = self.prolog.query("kb_call([has_equivalent_class('"+goal.namespace+class_name+"',A)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							print(solution['A'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+			
+			#intersection of classes
+			try:
+				q = self.prolog.query("kb_call([has_description('"+goal.namespace+class_name+"',intersection_of(B)), member(A,B)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							print(solution['A'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+			
+			#union of classes
+			try:
+				q = self.prolog.query("kb_call([has_description('"+goal.namespace+class_name+"',union_of(B)), member(A,B)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							print(solution['A'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+			i=i+1
+				
+		################################################################## Iterate Reasoning over all related classes #######################################
+		for i in range(len(listclasses)):
+			goal.class_name=listclasses[i]
+			#simple indirect query 
+			try:
+				q = self.prolog.query("kb_call([subclass_of(A, '"+self.namespace+"Object'),subclass_of(A,B), has_description(B, some('"+self.namespace+"has_disposition', '"+self.namespace+goal.class_name+"'))]).")
+				for solution in q.solutions():
+					result.classes.append(solution['A'])
+					print(solution['A'])
+				q.finish() 
+			except Exception as e:
+				feedback.feedback=False
+				print("*********", str(e))
+			try:
+				q = self.prolog.query("kb_call([subclass_of(A, '"+self.namespace+"Object'),subclass_of(A,B), has_description(B, some('"+self.namespace+"has_disposition', '"+self.namespace+goal.class_name+"')), has_equivalent_class(A,C)]).")
+				for solution in q.solutions():
+					result.classes.append(solution['C'])
+					print(solution['C'])
+				q.finish() 
+			except Exception as e:
+				feedback.feedback=False
+				print("*********", str(e))
+			if len(result.classes)>0:
+				feedback.feedback=True
+			else:
+				feedback.feedback=False
+		self.role_to_object_server.publish_feedback(feedback)
+		self.role_to_object_server.set_succeeded(result)   
+
+##########################################################################################################################################################################
+	def executeDomainRelation(self, goal):
+		print("Processing goal ...")
+
+		result=KBDomainRelationResult()
+		feedback=KBDomainRelationFeedback()
+		result.relations=[]
+		if goal.type=='':
+			goal='Object'
+		feedback.feedback=True
+		if len(goal.namespace)<1:
+			goal.namespace=self.namespace
+		
+		if goal.type=='Object':
+			try:
+				q = self.prolog.query("kb_call([subclass_of('"+goal.namespace+goal.class_name+"',A), has_description(A,value('"+goal.namespace+"has_object_domain',B))]).")
+				for solution in q.solutions():
+					result.relations.append(solution['B'])
+					print(solution['B'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+		else:
+			try:
+				q = self.prolog.query("kb_call([subclass_of('"+goal.namespace+goal.class_name+"',A), has_description(A,value('"+goal.namespace+"has_action_domain',B))]).")
+				for solution in q.solutions():
+					result.relations.append(solution['B'])
+					print(solution['B'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+		if len(result.relations)>0:
+			feedback.feedback=True
+		else:
+			feedback.feedback=False
+		self.domain_relation_server.publish_feedback(feedback)
+		self.domain_relation_server.set_succeeded(result)
+
+##########################################################################################################################################################################
+	def executePotentialActionObject(self, goal):
+		print("Processing goal ...")
+
+		result=KBListParticipantResult()
+		feedback=KBListParticipantFeedback()
+		result.classes=[]
+		feedback.feedback=True
+		if len(goal.namespace)<1:
+			goal.namespace=self.namespace
+		############################################################################### Such for all related classes ##############################################
+		listclasses=[goal.class_name]
+		i=0
+		while(i<len(listclasses)):
+			class_name=listclasses[i]
+			
+			#superclasses
+			try:
+				q = self.prolog.query("kb_call([subclass_of('"+goal.namespace+class_name+"',A)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							#print(solution['A'])
+				q.finish() 
+			
+			except Exception as e:
+				print("*********", str(e))
+			
+			#equivalentclasses
+			try:
+				q = self.prolog.query("kb_call([has_equivalent_class('"+goal.namespace+class_name+"',A)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							#print(solution['A'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+			
+			#intersection of classes
+			try:
+				q = self.prolog.query("kb_call([has_description('"+goal.namespace+class_name+"',intersection_of(B)), member(A,B)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							#print(solution['A'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+			
+			#union of classes
+			try:
+				q = self.prolog.query("kb_call([has_description('"+goal.namespace+class_name+"',union_of(B)), member(A,B)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							#print(solution['A'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+			i=i+1
+				
+		################################################################## Iterate Reasoning over all related classes #######################################
+		if goal.type=='Action':
+			for i in range(len(listclasses)):
+				goal.class_name=listclasses[i]
+				
+				try:
+					q = self.prolog.query("kb_call([subclass_of('"+goal.namespace+goal.class_name+"',A), has_description(A, some('"+goal.namespace+goal.relation+"', C)), has_description(C,union_of(D)), member(E,D)]).")
+					for solution in q.solutions():
+						result.classes.append(str(solution['E']))
+						print(solution['E'])
+					q.finish() 
+					feedback.feedback=True  
+				except Exception as e:
+					feedback.feedback=False
+					
+				try:
+					q = self.prolog.query("kb_call([subclass_of('"+goal.namespace+goal.class_name+"',A), has_description(A, some('"+goal.namespace+goal.relation+"', C))]).")
+					for solution in q.solutions():
+						result.classes.append(str(solution['C']))
+						print(solution['C'])
+					q.finish() 
+					feedback.feedback=True  
+				except Exception as e:
+					feedback.feedback=False
+		else:
+			for i in range(len(listclasses)):
+				goal.class_name=listclasses[i]
+				
+				try:
+					q = self.prolog.query("kb_call([subclass_of('"+goal.namespace+goal.class_name+"',A), has_description(A, some('"+goal.namespace+goal.relation+"', C)), has_description(C,union_of(D)), member(E,D)]).")
+					for solution in q.solutions():
+						result.classes.append(str(solution['E']))
+						print(solution['E'])
+					q.finish() 
+					feedback.feedback=True  
+				except Exception as e:
+					feedback.feedback=False
+					
+				try:
+					q = self.prolog.query("kb_call([subclass_of('"+goal.namespace+goal.class_name+"',B), has_description(B, some('"+goal.namespace+goal.relation+"', C)),has_description(C,some('"+goal.namespace+"has_disposition',F)),subclass_of(G,'"+goal.namespace+"Object'), subclass_of(G,H), has_description(H, some('"+goal.namespace+"has_disposition', F))]).")
+					for solution in q.solutions():
+						result.classes.append(str(solution['G']))
+						print(solution['G'])
+					q.finish() 
+					feedback.feedback=True  
+				except Exception as e:
+					feedback.feedback=False
+					
+				try:
+					q = self.prolog.query("kb_call([subclass_of('"+goal.namespace+goal.class_name+"',A), has_description(A, some('"+goal.namespace+goal.relation+"', C))]).")
+					for solution in q.solutions():
+						result.classes.append(str(solution['C']))
+						print(solution['C'])
+					q.finish() 
+					feedback.feedback=True  
+				except Exception as e:
+					feedback.feedback=False
+					
+				try:
+				
+					q = self.prolog.query("kb_call([ subclass_of('"+goal.namespace+goal.class_name+"',B), has_description(B, some('"+goal.namespace+goal.relation+"', C)), has_description(C,union_of(D)), member(E,D), has_description(E,some('"+goal.namespace+"has_disposition',F)),subclass_of(G, '"+goal.namespace+"Object'), subclass_of(G,H), has_description(H, some('"+goal.namespace+"has_disposition', F))]).")
+					for solution in q.solutions():
+						result.classes.append(str(solution['G']))
+						print(solution['G'])
+					q.finish() 
+					feedback.feedback=True  
+				except Exception as e:
+					feedback.feedback=False
+			
+			
+		if len(result.classes)>0:
+			feedback.feedback=True
+		else:
+			feedback.feedback=False
+		self.potential_action_object_server.publish_feedback(feedback)
+		self.potential_action_object_server.set_succeeded(result)
+##########################################################################################################################################################################
+
+	def executeListParticipant(self, goal):
+		
+		print("Processing goal ...")
+
+		result=KBListParticipantResult()
+		feedback=KBListParticipantFeedback()
+		result.classes=[]
+		result.multiplicity=[]
+		feedback.feedback=True
+		if len(goal.namespace)<1:
+			goal.namespace=self.namespace
+		############################################################################### Such for all related classes ##############################################
+		listclasses=[goal.class_name]
+		i=0
+		while(i<len(listclasses)):
+			class_name=listclasses[i]
+			
+			#superclasses
+			try:
+				q = self.prolog.query("kb_call([subclass_of('"+goal.namespace+class_name+"',A)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							print(solution['A'])
+				q.finish() 
+			
+			except Exception as e:
+				print("*********", str(e))
+			
+			#equivalentclasses
+			try:
+				q = self.prolog.query("kb_call([has_equivalent_class('"+goal.namespace+class_name+"',A)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							print(solution['A'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+			
+			#intersection of classes
+			try:
+				q = self.prolog.query("kb_call([has_description('"+goal.namespace+class_name+"',intersection_of(B)), member(A,B)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							print(solution['A'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+			
+			#union of classes
+			try:
+				q = self.prolog.query("kb_call([has_description('"+goal.namespace+class_name+"',union_of(B)), member(A,B)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							print(solution['A'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+			i=i+1
+				
+		################################################################## Iterate Reasoning over all related classes #######################################
+		for i in range(len(listclasses)):
+			goal.class_name=listclasses[i]
+			try:	
+				#simple indirect query
+				try:
+					q = self.prolog.query("kb_call([subclass_of('"+self.namespace+goal.class_name+"',B), has_description(B, exactly('"+self.namespace+"has_participant',M, C)), has_description(C,some('"+self.namespace+"has_disposition',E))]).")
+					for solution in q.solutions():
+						result.classes.append(solution['E'])
+						result.multiplicity.append(str(solution['M']))
+						print(solution['E'],solution['M'])
+					q.finish() 
+					feedback.feedback=True  
+				except Exception as e:
+					feedback.feedback=False   
+				
+				try:
+					q = self.prolog.query("kb_call([subclass_of('"+self.namespace+goal.class_name+"',B), has_description(B, exactly('"+self.namespace+"has_participant',M, C)), has_description(C,some('"+self.namespace+"has_disposition',E)),has_description(E,union_of(F))]).")
+					for solution in q.solutions():
+						res=""
+						for r in solution['F']:
+							res=res+str(r)+";"
+						result.classes.append(res)
+						result.multiplicity.append(str(solution['M']))
+						print(res,solution['M'])
+					q.finish() 
+					feedback.feedback=True  
+				except Exception as e:
+					feedback.feedback=False
+					
+				try:
+					q = self.prolog.query("kb_call([subclass_of('"+self.namespace+goal.class_name+"',B), has_description(B, some('"+self.namespace+"has_participant', C)), has_description(C,some('"+self.namespace+"has_disposition',E)),has_description(E,union_of(F))]).")
+					for solution in q.solutions():
+						res=""
+						for r in solution['F']:
+							res=res+str(r)+";"
+						result.classes.append(res)
+						result.multiplicity.append(str("some"))
+						print(res,str("some"))
+					q.finish() 
+					feedback.feedback=True  
+				except Exception as e:
+					feedback.feedback=False
+				
+				#complex indirect query
+				try:
+					q = self.prolog.query("kb_call([subclass_of('"+self.namespace+goal.class_name+"',B), has_description(B, some('"+self.namespace+"has_participant', C)), has_description(C,some('"+self.namespace+"has_disposition',E))]).")
+					for solution in q.solutions():
+						result.classes.append(solution['E'])
+						result.multiplicity.append(str("some"))
+						print(solution['E'],str("some"))
+					q.finish() 
+					feedback.feedback=True  
+				except Exception as e:
+					feedback.feedback=False
+					
+				#simple direct query
+				try:
+					q = self.prolog.query("kb_call([subclass_of('"+self.namespace+goal.class_name+"',B), has_description(B, some('"+self.namespace+"has_participant', C))]).")
+					for solution in q.solutions():
+						result.classes.append(solution['C'])
+						result.multiplicity.append(str("some"))
+						print(solution['C'],str("some"))
+					q.finish() 
+					feedback.feedback=True  
+				except Exception as e:
+					feedback.feedback=False
+					
+				
+				try:
+					q = self.prolog.query("kb_call([subclass_of('"+self.namespace+goal.class_name+"',B), has_description(B, some('"+self.namespace+"has_participant', C)),has_description(C,union_of(F))]).")
+					for solution in q.solutions():
+						res=""
+						for r in solution['F']:
+							res=res+str(r)+";"
+						result.classes.append(res)
+						result.multiplicity.append(str("some"))
+						print(res,str("some"))
+					q.finish() 
+					feedback.feedback=True  
+				except Exception as e:
+					feedback.feedback=False
+				
+				#complex direct query
+				try:
+					q = self.prolog.query("kb_call([subclass_of('"+self.namespace+goal.class_name+"',B), has_description(B, exxactly('"+self.namespace+"has_participant',M, C)),has_description(C,union_of(F))]).")
+					for solution in q.solutions():
+						res=""
+						for r in solution['F']:
+							res=res+str(r)+";"
+						result.classes.append(res)
+						result.multiplicity.append(str(solution['M']))
+						print(res,solution['M'])
+					q.finish() 
+					feedback.feedback=True  
+				except Exception as e:
+					feedback.feedback=False
+					
+				if len(result.classes)>0:
+					feedback.feedback=True
+				else:
+					feedback.feedback=False
+			except Exception as e:
+				feedback.feedback=False
+				print("*********", str(e))
+		self.list_participant_server.publish_feedback(feedback)
+		self.list_participant_server.set_succeeded(result)
 ##########################################################################################################################################################################
          
 	def executeLoadBeliefState(self, goal):

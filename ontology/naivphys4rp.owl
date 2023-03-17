@@ -21,6 +21,183 @@
     
 
 
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_act -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_act">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Agent"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_agent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_agent">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Agent"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_container -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_container">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Container"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_destination -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_destination">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Destination"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_ingredient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_ingredient">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Ingredient"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_source -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_source">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Source"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_support -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_support">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Support"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_tool -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_tool">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Tool"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_complement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_complement">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Ingredient"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Tool"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Ingredient"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Tool"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_hold -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_hold">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Container"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Destination"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Source"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Support"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition">
@@ -247,6 +424,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_action_domain -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_action_domain">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Role"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color">
@@ -289,16 +475,22 @@
                                                                                 <rdf:rest>
                                                                                     <rdf:Description>
                                                                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                                        <rdf:first>Violet</rdf:first>
+                                                                                        <rdf:first>Transparent</rdf:first>
                                                                                         <rdf:rest>
                                                                                             <rdf:Description>
                                                                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                                                <rdf:first>White</rdf:first>
+                                                                                                <rdf:first>Violet</rdf:first>
                                                                                                 <rdf:rest>
                                                                                                     <rdf:Description>
                                                                                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                                                        <rdf:first>Yellow</rdf:first>
-                                                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                                        <rdf:first>White</rdf:first>
+                                                                                                        <rdf:rest>
+                                                                                                            <rdf:Description>
+                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                <rdf:first>Yellow</rdf:first>
+                                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                                            </rdf:Description>
+                                                                                                        </rdf:rest>
                                                                                                     </rdf:Description>
                                                                                                 </rdf:rest>
                                                                                             </rdf:Description>
@@ -421,6 +613,15 @@
                 <owl:hasValue>Solid</owl:hasValue>
             </owl:Restriction>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_object_domain -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_object_domain">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Role"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -646,6 +847,18 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Agent">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_action_domain"/>
+                <owl:hasValue>can_be_agent</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_object_domain"/>
+                <owl:hasValue>can_act</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -654,6 +867,46 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Bottle">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_source"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pour"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_tool"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Cook"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Make"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pick"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Place"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Prepare"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Reach"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Serve"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Test"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Transport"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_hold"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Milk"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#RinseFluid"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#SampleFluid"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
@@ -682,6 +935,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mass"/>
                 <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.005</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mesh"/>
+                <owl:hasValue>Models/SM_Milk</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -724,6 +983,55 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_destination"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Place"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pour"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_tool"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Cook"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Make"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pick"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Place"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Prepare"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Reach"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Serve"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Transport"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_hold"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Mug"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Spoon"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Ingredient"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Container"/>
             </owl:Restriction>
@@ -750,6 +1058,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_material"/>
                 <owl:hasValue>Plastic</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mesh"/>
+                <owl:hasValue>Models/Bowl/bowl</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -792,6 +1106,37 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_source"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pour"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_tool"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Cook"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Make"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pick"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Place"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Prepare"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Reach"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Serve"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Transport"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_hold"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Muesli"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Container"/>
             </owl:Restriction>
@@ -818,6 +1163,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_material"/>
                 <owl:hasValue>Cartoon</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mesh"/>
+                <owl:hasValue>Models/Muesli/SM_KnusperSchokoKeks_1</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -854,6 +1205,146 @@
     
 
 
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Breakfast -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Breakfast">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Milk"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Muesli"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Canister -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Canister">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_destination"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Insert"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Place"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pour"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_tool"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Insert"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pick"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Place"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Reach"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Test"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Transport"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_hold"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#RinseFluid"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#SampleFluid"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Container"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Tool"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
+                <owl:hasValue>Blue</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
+                <owl:hasValue>Transparent</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mass"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.05</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_material"/>
+                <owl:hasValue>Glass</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mesh"/>
+                <owl:hasValue>SkeletalMeshes/Robots/tracebot_robot/Canister/Canister</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_shape"/>
+                <owl:hasValue>Cylindrical</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_shape"/>
+                <owl:hasValue>Rectangular</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_size"/>
+                <owl:hasValue>Small</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#is_graspable"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#is_openable"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Clean -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Clean">
@@ -878,8 +1369,8 @@
                         <owl:someValuesFrom>
                             <owl:Class>
                                 <owl:unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Container"/>
                                     <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Support"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Tool"/>
                                 </owl:unionOf>
                             </owl:Class>
                         </owl:someValuesFrom>
@@ -895,6 +1386,18 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Container">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_action_domain"/>
+                <owl:hasValue>can_be_container</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_object_domain"/>
+                <owl:hasValue>can_hold</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -942,11 +1445,113 @@
     
 
 
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#CookTable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#CookTable">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Island"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Table"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_destination"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Clean"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Move"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Place"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_source"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Move"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_support"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Cook"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Make"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Prepare"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_hold"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Tool"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Cup -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Cup">
         <owl:equivalentClass rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Mug"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_destination"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Place"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pour"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_tool"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Cook"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Make"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pick"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Place"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Prepare"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Reach"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Serve"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Transport"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_hold"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Spoon"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Ingredient"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
@@ -975,6 +1580,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_material"/>
                 <owl:hasValue>Plastic</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mesh"/>
+                <owl:hasValue>Models/SM_Cup</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1011,6 +1622,61 @@
     
 
 
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#DeskTable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#DeskTable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Table"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Clean"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_source"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Move"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_destination"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Move"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_support"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Serve"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
+                <owl:hasValue>Gray</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
+                <owl:hasValue>White</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mass"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">40.0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_size"/>
+                <owl:hasValue>Big</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Destination -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Destination">
@@ -1023,14 +1689,119 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_action_domain"/>
+                <owl:hasValue>can_be_destination</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_object_domain"/>
+                <owl:hasValue>can_hold</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Drawer -->
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#DiningTable -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Drawer">
+    <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#DiningTable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Table"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Clean"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_source"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Move"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_destination"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Move"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_support"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Serve"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
+                <owl:hasValue>Brown</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
+                <owl:hasValue>Yellow</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mass"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">50.0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_size"/>
+                <owl:hasValue>Big</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#DishWasher -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#DishWasher">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_destination"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Clean"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Move"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Place"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_source"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Clean"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Move"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_hold"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Tool"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
@@ -1040,7 +1811,181 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
+                <owl:hasValue>Black</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
                 <owl:hasValue>Gray</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mass"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">50.0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mesh"/>
+                <owl:hasValue>Meshes/DishWasher/SM_Dishwasher_Base</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_size"/>
+                <owl:hasValue>Big</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#is_graspable"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#is_openable"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#DrainTray -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#DrainTray">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_destination"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Insert"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Place"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_tool"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Insert"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Place"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Reach"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Test"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_hold"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Canister"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Container"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Tool"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
+                <owl:hasValue>White</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mass"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.05</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_material"/>
+                <owl:hasValue>Plastic</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_size"/>
+                <owl:hasValue>Small</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#is_graspable"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#is_openable"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Drawer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Drawer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Clean"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_destination"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Move"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_source"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Move"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_hold"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Tool"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Container"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
+                <owl:hasValue>Black</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1053,6 +1998,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_material"/>
                 <owl:hasValue>Wood</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mesh"/>
+                <owl:hasValue>Meshes/Kitchen/{SM_Kitchen_??_Drawer_??,SM_Kitchen_??_Base_Drawer_??,SM_Fridge_??_Drawer_??}</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1095,6 +2046,32 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_destination"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Clean"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Move"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Place"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_source"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Move"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_hold"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Bottle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Container"/>
             </owl:Restriction>
@@ -1127,6 +2104,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_material"/>
                 <owl:hasValue>Wood</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mesh"/>
+                <owl:hasValue>Meshes/Fridge/SM_Fridge_Base</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1187,6 +2170,26 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Ingredient">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_action_domain"/>
+                <owl:hasValue>can_be_ingredient</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_object_domain"/>
+                <owl:hasValue>can_complement</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Insert -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Insert">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Place"/>
     </owl:Class>
     
 
@@ -1210,7 +2213,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
-                <owl:hasValue>Gray</owl:hasValue>
+                <owl:hasValue>Brown</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1223,6 +2226,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_material"/>
                 <owl:hasValue>Wood</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mesh"/>
+                <owl:hasValue>Meshes/Kitchen/M_Counter_Sink_Stove</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1272,11 +2281,49 @@
     <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Machine -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Machine">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Robot"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_act"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_agent"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Action"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Clean"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Cook"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Grasp"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Look"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Make"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Observe"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pick"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pour"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Prepare"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Reach"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#See"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Serve"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Transport"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mesh"/>
+                <owl:hasValue>SkeletalMeshes/Robots/pr2/pr2</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1296,6 +2343,22 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Milk">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_ingredient"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Cook"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Make"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pour"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Prepare"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Serve"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
@@ -1362,6 +2425,22 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_ingredient"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Cook"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Make"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pour"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Prepare"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Serve"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Ingredient"/>
             </owl:Restriction>
@@ -1392,6 +2471,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Mug">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_destination"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pour"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1457,7 +2542,7 @@
                 <owl:onClass>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Tool"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Destination"/>
                     </owl:Restriction>
                 </owl:onClass>
             </owl:Restriction>
@@ -1469,16 +2554,61 @@
                 <owl:onClass>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Container"/>
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Support"/>
-                                </owl:unionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Tool"/>
                     </owl:Restriction>
                 </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pour -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pour">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Action"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_participant"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Agent"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_participant"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Destination"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_participant"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Ingredient"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_participant"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Source"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1489,6 +2619,94 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Prepare">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Action"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pump -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pump">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_tool"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Reach"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Test"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Tool"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_part"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#DrainTray"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
+                <owl:hasValue>Black</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
+                <owl:hasValue>Blue</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
+                <owl:hasValue>Gray</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
+                <owl:hasValue>White</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mass"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">7.01</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_material"/>
+                <owl:hasValue>Steel</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_size"/>
+                <owl:hasValue>Big</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#is_graspable"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#is_openable"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1513,10 +2731,125 @@
     
 
 
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#RinseFluid -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#RinseFluid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_ingredient"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pour"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Test"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Ingredient"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
+                <owl:hasValue>Transparent</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mass"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_material"/>
+                <owl:hasValue>Liquid</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Robot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Robot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_hold"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Tool"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Container"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Role -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Role">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#SampleFluid -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#SampleFluid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_ingredient"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pour"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Test"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Ingredient"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
+                <owl:hasValue>Orange</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mass"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_material"/>
+                <owl:hasValue>Liquid</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1605,6 +2938,18 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_action_domain"/>
+                <owl:hasValue>can_be_source</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_object_domain"/>
+                <owl:hasValue>can_hold</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1613,6 +2958,25 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Spoon">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#PhysicalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_tool"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Cook"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Make"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Pick"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Place"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Prepare"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Reach"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Serve"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Transport"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
@@ -1665,6 +3029,12 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mesh"/>
+                <owl:hasValue>Models/SoupSpoon/SM_SoupSpoon</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_shape"/>
                 <owl:hasValue>Filiform</owl:hasValue>
             </owl:Restriction>
@@ -1691,10 +3061,91 @@
     
 
 
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#SterilityTestTable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#SterilityTestTable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Table"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_destination"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Clean"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Move"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Place"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_source"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Move"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_be_support"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Test"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#can_hold"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Tool"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Support"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
+                <owl:hasValue>Gray</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mass"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">150.0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_material"/>
+                <owl:hasValue>Steel</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Support -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Support">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_action_domain"/>
+                <owl:hasValue>can_be_support</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_object_domain"/>
+                <owl:hasValue>can_hold</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1707,24 +3158,6 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Support"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
-                <owl:hasValue>Brown</owl:hasValue>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_color"/>
-                <owl:hasValue>Yellow</owl:hasValue>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_mass"/>
-                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">50.0</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1747,12 +3180,6 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_size"/>
-                <owl:hasValue>Big</owl:hasValue>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#is_graspable"/>
                 <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
             </owl:Restriction>
@@ -1767,10 +3194,64 @@
     
 
 
+    <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Test -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Test">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Action"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_participant"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Ingredient"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_participant"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Tool"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_participant"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_disposition"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Support"/>
+                    </owl:Restriction>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Tool -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Tool">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#Role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_action_domain"/>
+                <owl:hasValue>can_be_tool</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/franklin/ontologies/2022/7/naivphys4rp.owl#has_object_domain"/>
+                <owl:hasValue>can_complement</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
