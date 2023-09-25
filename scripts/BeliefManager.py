@@ -29,6 +29,18 @@ class NaivPhys4RPKnowrobServer:
          self.list_participant_server.start()
          print("Server list participant is started !")
          
+         
+         
+         self.list_synonym_server = actionlib.SimpleActionServer('naivphys4rp_knowrob_synonym', KBClassSynonymAction, self.executeClassSynonym, False)
+         self.list_synonym_server.start()
+         print("Server list synonyms is started !")
+         
+         
+         self.list_part_server = actionlib.SimpleActionServer('naivphys4rp_knowrob_part', KBClassConstituentAction, self.executeClassPart, False)
+         self.list_part_server.start()
+         print("Server list parts is started !")
+         
+         
          """
          self.object_relation_server = actionlib.SimpleActionServer('naivphys4rp_object_relation', KBObjectRelationAction, self.executeObjectRelation, False)
          self.object_relation_server.start()
@@ -102,30 +114,194 @@ class NaivPhys4RPKnowrobServer:
          
 	def executeLoadOntology(self, goal):
       
-         print("Processing goal ...")
-         packageName = goal.package
-         relativePath= goal.relative_path
-         if len(goal.namespace)<1:
-              goal.namespace=self.namespace
-         else:	
-              self.namespace=goal.namespace
-         result=KBLoadOntologyResult()
-         feedback=KBLoadOntologyFeedback()
-         result.status=True
-         feedback.feedback=True
-         try:
-            print("Loading ontology from:", packageName, relativePath)
-            q=self.prolog.query("load_owl('package://"+str(packageName)+"/"+str(relativePath)+"').")
-            #check if loading was successful
-            solution=next(q.solutions())
-            print("Loading ontology was successful")
-            q.finish()	                
-         except Exception as e:
-         	result.status=False
-         	feedback.feedback=False
-         	print("*********", str(e))
-         self.onto_load_server.publish_feedback(feedback)
-         self.onto_load_server.set_succeeded(result)
+	 print("Processing goal ...")
+	 packageName = goal.package
+	 relativePath= goal.relative_path
+	 if len(goal.namespace)<1:
+	      goal.namespace=self.namespace
+	 else:	
+	      self.namespace=goal.namespace
+	 result=KBLoadOntologyResult()
+	 feedback=KBLoadOntologyFeedback()
+	 result.status=True
+	 feedback.feedback=True
+	 try:
+	    print("Loading ontology from:", packageName, relativePath)
+	    q=self.prolog.query("load_owl('package://"+str(packageName)+"/"+str(relativePath)+"').")
+	    #check if loading was successful
+	    solution=next(q.solutions())
+	    print("Loading ontology was successful")
+	    q.finish()	                
+	 except Exception as e:
+	 	result.status=False
+	 	feedback.feedback=False
+	 	print("*********", str(e))
+	 self.onto_load_server.publish_feedback(feedback)
+	 self.onto_load_server.set_succeeded(result)
+
+
+##########################################################################################################################################################################
+         
+	def executeClassSynonym(self, goal):
+      
+		print("Processing goal ...")
+		if len(goal.namespace)<1:
+			goal.namespace=self.namespace
+		else:	
+			self.namespace=goal.namespace
+		result=KBClassSynonymResult()
+		feedback=KBClassSynonymFeedback()
+		feedback.feedback=True
+		listclasses=[goal.class_name]
+		result.classes=[]
+		i=0
+		while(i<len(listclasses)):
+			class_name=listclasses[i]
+			
+			#subclasses
+			try:
+				q = self.prolog.query("kb_call([subclass_of(A,'"+goal.namespace+class_name+"')]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							result.classes.append(solution['A'])
+							print(solution['A'])
+				q.finish() 
+			
+			except Exception as e:
+				print("*********", str(e))
+			
+			#equivalentclasses
+			try:
+				q = self.prolog.query("kb_call([has_equivalent_class('"+goal.namespace+class_name+"',A)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							result.classes.append(solution['A'])
+							print(solution['A'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+			
+			#intersection of classes
+			try:
+				q = self.prolog.query("kb_call([has_description('"+goal.namespace+class_name+"',intersection_of(B)), member(A,B)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							print(solution['A'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+			
+			#union of classes
+			try:
+				q = self.prolog.query("kb_call([has_description('"+goal.namespace+class_name+"',union_of(B)), member(A,B)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							result.classes.append(solution['A'])
+							print(solution['A'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+			i=i+1
+		self.list_synonym_server.publish_feedback(feedback)
+		self.list_synonym_server.set_succeeded(result)
+
+
+##########################################################################################################################################################################
+         
+	def executeClassPart(self, goal):
+      
+		print("Processing goal ...")
+		if len(goal.namespace)<1:
+			goal.namespace=self.namespace
+		else:	
+			self.namespace=goal.namespace
+		result=KBClassConstituentResult()
+		feedback=KBClassConstituentFeedback()
+		feedback.feedback=True
+		listclasses=[goal.class_name]
+		result.classes=[]
+		i=0
+		part_relation=goal.namespace+"has_part"
+		include_relation=goal.namespace+"includes"
+		while(i<len(listclasses)):
+			class_name=listclasses[i]
+			
+			#has_part relation
+			try:
+				q = self.prolog.query("kb_call([subclass_of('"+goal.namespace+class_name+"', B), has_description(B, exactly('"+part_relation+"',1,A))]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							result.classes.append(solution['A'])
+							print(solution['A'])
+				q.finish() 
+			
+			except Exception as e:
+				print("*********", str(e))
+				
+			
+			#include relation
+			try:
+				q = self.prolog.query("kb_call([subclass_of('"+goal.namespace+class_name+"', B), has_description(B, exactly('"+include_relation+"',1,A))]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							result.classes.append(solution['A'])
+							print(solution['A'])
+				q.finish() 
+			
+			except Exception as e:
+				print("*********", str(e))
+			
+			#equivalentclasses
+			try:
+				q = self.prolog.query("kb_call([has_equivalent_class('"+goal.namespace+class_name+"',A)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							print(solution['A'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+			
+			#intersection of classes
+			try:
+				q = self.prolog.query("kb_call([has_description('"+goal.namespace+class_name+"',intersection_of(B)), member(A,B)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							result.classes.append(solution['A'])
+							print(solution['A'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+			
+			#union of classes
+			try:
+				q = self.prolog.query("kb_call([has_description('"+goal.namespace+class_name+"',union_of(B)), member(A,B)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'].split(goal.namespace).pop() not in listclasses:
+							listclasses.append(solution['A'].split(goal.namespace).pop())
+							print(solution['A'])
+				q.finish() 
+			except Exception as e:
+				print("*********", str(e))
+			i=i+1
+		self.list_part_server.publish_feedback(feedback)
+		self.list_part_server.set_succeeded(result)
 
 
 ##########################################################################################################################################################################
@@ -207,6 +383,7 @@ class NaivPhys4RPKnowrobServer:
 			goal.namespace=self.namespace
 		############################################################################### Such for all related classes ##############################################
 		listclasses=[goal.class_name]
+		print('----------------------------Role To Object----------------', goal.class_name)
 		i=0
 		while(i<len(listclasses)):
 			class_name=listclasses[i]
@@ -287,6 +464,29 @@ class NaivPhys4RPKnowrobServer:
 				feedback.feedback=True
 			else:
 				feedback.feedback=False
+		
+		############################ Such for all subclasses #################################################
+		i=0
+		list_classes=result.classes.copy()
+		while(i<len(list_classes)):
+			class_name=list_classes[i]
+			
+			#superclasses
+			try:
+				q = self.prolog.query("kb_call([subclass_of(A,'"+class_name+"')]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'] not in list_classes:
+							list_classes.append(solution['A'])
+							print(solution['A'])
+				q.finish() 
+			
+			except Exception as e:
+				print("*********", str(e))
+			i+=1
+		
+		result.classes=list_classes.copy()
+		print('----------------------------Role To Object 2----------------', result.classes)
 		self.role_to_object_server.publish_feedback(feedback)
 		self.role_to_object_server.set_succeeded(result)   
 
@@ -468,6 +668,42 @@ class NaivPhys4RPKnowrobServer:
 			feedback.feedback=True
 		else:
 			feedback.feedback=False
+		
+		i=0
+		list_classes=result.classes.copy()
+		while(i<len(list_classes)):
+			class_name=list_classes[i]
+			
+			#superclasses
+			try:
+				q = self.prolog.query("kb_call([subclass_of(A,'"+class_name+"')]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'] not in list_classes:
+							list_classes.append(solution['A'])
+							print(solution['A'])
+				q.finish() 
+			
+			except Exception as e:
+				print("*********", str(e))
+				
+			#equivalentclasses
+			try:
+				q = self.prolog.query("kb_call([has_equivalent_class('"+class_name+"',A)]).")
+				for solution in q.solutions():
+					if len(solution['A'].split(goal.namespace))>1:
+						if solution['A'] not in list_classes:
+							list_classes.append(solution['A'])
+							print(solution['A'])
+				q.finish() 
+			
+			except Exception as e:
+				print("*********", str(e))
+				
+			i+=1
+		
+		result.classes=list_classes.copy()
+		
 		self.potential_action_object_server.publish_feedback(feedback)
 		self.potential_action_object_server.set_succeeded(result)
 ##########################################################################################################################################################################
@@ -892,6 +1128,48 @@ class NaivPhys4RPKnowrobServer:
 			print("*********", str(e))
 		self.object_property_server.publish_feedback(feedback)
 		self.object_property_server.set_succeeded(result)
+##########################################################################################################################################################################		
+	def executeDataProperty1(self, goal):
+		
+		print("Processing goal ...")
+
+		result=KBDataPropertyResult()
+		feedback=KBDataPropertyFeedback()
+		result.values=[]
+		feedback.feedback=True
+		try:
+		
+			if goal.quantifier == "only" or goal.quantifier == "some" or goal.quantifier == "value":
+				q = self.prolog.query("kb_call((subclass_of('"+self.namespace+class_name+"', C), has_description(C,"+ goal.quantifier+"('"+self.namespace+goal.property_name+"',A)))).")
+				for solution in q.solutions():
+					result.values.append(solution['A'])
+					print(solution['A'])
+				q.finish()
+				
+				q = self.prolog.query("kb_call((has_description('"+self.namespace+class_name+"', "+ goal.quantifier+"('"+self.namespace+goal.property_name+"',A)))).")
+				for solution in q.solutions():
+					result.values.append(solution['A'])
+					print(solution['A'])
+				q.finish()
+			else:
+				(nature, delimiter)=self.parseAttribute(goal.quantifier)
+				q = self.prolog.query("kb_call((subclass_of('"+self.namespace+class_name+"', C), has_description(C,"+ nature+"('"+self.namespace+goal.property_name+"',"+ delimiter+",A)))).")
+				for solution in q.solutions():
+					result.values.append(solution['A'])
+					print(solution['A'])
+				q.finish()
+				
+				q = self.prolog.query("kb_call((has_description('"+self.namespace+class_name+"', "+ nature+"('"+self.namespace+goal.property_name+"',"+ delimiter+",A)))).")
+				for solution in q.solutions():
+					result.values.append(solution['A'])
+					print(solution['A'])
+				q.finish()
+			                
+		except Exception as e:
+			feedback.feedback=False
+			print("*********", str(e))
+		self.data_property_server.publish_feedback(feedback)
+		self.data_property_server.set_succeeded(result)
 ##########################################################################################################################################################################
 				
 	def executeDataProperty(self, goal):
